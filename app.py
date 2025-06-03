@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import asyncio
-
+from keep_alive import keep_alive
 # Set up the bot
 bot = commands.Bot(command_prefix="$", intents=discord.Intents.all())
 
@@ -114,6 +114,6 @@ async def on_command_error(ctx, error):
     else:
         print(f"Error: {error}")
         await ctx.send(f"An error occurred: {error}")
-
+keep_alive()
 # Run the bot
 bot.run("TOKEN")  # Replace with your bot token
